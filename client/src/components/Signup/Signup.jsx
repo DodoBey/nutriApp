@@ -29,6 +29,16 @@ const Signup = () => {
       </div>
       <div className={styles.signupInputs}>
         <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          onChange={(event) =>
+            signupFormHandler("USERNAME_HANDLER", event.target.value)
+          }
+        />
+      </div>
+      <div className={styles.signupInputs}>
+        <input
           type="password"
           id="password"
           placeholder="Password"

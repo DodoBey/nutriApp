@@ -2,6 +2,8 @@ export const signupHandler = (state, action) => {
   switch (action.type) {
     case "EMAIL_HANDLER":
       return { ...state, email: action.payload };
+    case "USERNAME_HANDLER":
+      return { ...state, username: action.payload };
     case "PASSWORD_HANDLER":
       return { ...state, password: action.payload };
     case "GENDER_HANDLER":
@@ -19,6 +21,7 @@ export const signupHandler = (state, action) => {
 
 export const initialstate = {
   email: "",
+  username: "",
   password: "",
   gender: "",
   age: null,

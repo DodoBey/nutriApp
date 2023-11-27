@@ -72,7 +72,7 @@ summary {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-weight: normal;
+  /* font-weight: normal; */
   vertical-align: baseline;
   background: transparent;
 }

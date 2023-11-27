@@ -1,0 +1,16 @@
+.accordion {
+  background-color: aquamarine;
+  width: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px 40%;
+  .accordionTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #21aeca;
+  }
+}
