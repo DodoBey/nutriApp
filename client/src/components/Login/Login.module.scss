@@ -46,5 +46,10 @@
       #15b7a5
     );
     width: 5em;
+    &:disabled {
+      pointer-events: none;
+      background-image: none;
+      background-color: grey;
+    }
   }
 }
