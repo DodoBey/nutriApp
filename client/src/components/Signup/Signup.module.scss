@@ -23,12 +23,14 @@
     color: black;
   }
   .signupInputs {
-    border: 1px solid black;
-    border-radius: 5px;
     margin: 10px;
     font-weight: 700;
     color: #a5a5af;
-    background-color: whitesmoke;
+    text-align: left;
+    input {
+      border: 1px solid black;
+      border-radius: 5px;
+    }
   }
   .userVariables {
     display: flex;
@@ -37,8 +39,7 @@
       border: 1px solid black;
       border-radius: 5px;
       margin: 10px;
-      font-family: "Nunito", sans-serif;
-      font-weight: 600;
+      font-weight: 400;
       color: #a5a5af;
       width: 100%;
       background-color: whitesmoke;
@@ -63,5 +64,16 @@
       #15b7a5
     );
     width: 5em;
+  }
+  .genderPick {
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      align-items: center;
+      input {
+        margin: auto 4px;
+      }
+    }
   }
 }

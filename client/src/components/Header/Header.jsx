@@ -1,5 +1,6 @@
 import styles from "./Header.module.scss";
 import MainLogo from "../../assets/dailyLogo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,7 +12,12 @@ const Header = () => {
         />
         <span>Daily Intake</span>
       </div>
-      <span className={styles.headerRight}>Login</span>
+      <Link
+        className={styles.headerRight}
+        to={"/login"}
+      >
+        Login
+      </Link>
     </header>
   );
 };

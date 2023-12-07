@@ -2,114 +2,283 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #77c9d4;
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font-weight: normal; */
+  vertical-align: baseline;
+  background: transparent;
 }
 
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
-    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
- */
-*:where(
-    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
-  ) {
-  all: unset;
-  display: revert;
+body {
+  background-color: #77c9d4;
+  padding: 10px;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   font-family: "Roboto", sans-serif;
 }
 
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Fix mobile Safari increase font-size on landscape mode */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a,
-button {
-  cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol,
-ul,
-menu,
-summary {
-  list-style: none;
-}
-
-/* For images to not be able to exceed their container */
 img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
+  max-width: 100%;
 }
 
-/* removes spacing between cells in tables */
+ul {
+  list-style: none;
+} /* we'll restore bullets as needed for content */
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+td img {
+  vertical-align: top;
 }
 
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #999;
+  margin: 1rem 0;
+  padding: 0;
+}
+
 input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre-line;
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+sub,
+sup {
+  font-size: 0.8rem;
+  line-height: 0;
+  position: relative;
+}
+sup {
+  top: -0.5rem;
+}
+sub {
+  bottom: -0.25rem;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+
+label,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+  cursor: pointer;
+}
+
+button,
+input,
+select,
 textarea {
-  -webkit-user-select: auto;
+  margin: 0;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
+ins {
+  background-color: var(--highlight-color);
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: var(--highlight-color);
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
+blockquote {
+  padding: 2rem;
+  border-left: 1px solid #333;
 }
 
-/* preformatted text - use only for this feature */
-:where(pre) {
-  all: revert;
-  box-sizing: border-box;
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+} /* https://css-tricks.com/snippets/css/clear-fix/ */
+
+/* ———— END THE GENERIC RESETS ———— */
+
+:root {
+  --font-system: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* https://css-tricks.com/snippets/css/system-font-stack */
+  --text-color: #333;
+  --featured-color: #03f;
+  --featured-color-hover: #69f;
+  --highlight-color: #fcd700;
 }
 
-/* reset default text opacity of input placeholder */
-::placeholder {
-  color: unset;
+body {
+  font-size: 16px;
+  font-family: var(--font-system);
+  color: var(--text-color);
 }
 
-/* fix the feature of 'hidden' attribute.
-display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
+a {
+  color: var(--featured-color);
+}
+a:hover {
+  color: var(--featured-color-hover);
 }
 
-/* revert for bug in Chromium browsers
-- fix for the content editable attribute will work properly.
-- webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable="false"])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
+@media screen and (max-width: 480px) {
 }
 
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-  all: revert;
-  box-sizing: border-box;
+@media print {
 }

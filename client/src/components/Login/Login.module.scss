@@ -23,11 +23,13 @@
     color: black;
   }
   .loginInputs {
-    border: 1px solid black;
-    border-radius: 5px;
     margin: 10px;
     font-weight: 700;
     color: whitesmoke;
+    input {
+      border: 1px solid black;
+      border-radius: 5px;
+    }
   }
   button {
     border: 1px solid black;
@@ -44,5 +46,10 @@
       #15b7a5
     );
     width: 5em;
+    &:disabled {
+      pointer-events: none;
+      background-image: none;
+      background-color: grey;
+    }
   }
 }
